@@ -1,0 +1,73 @@
+<div class="outer">
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-2 col-lg-5 offset-lg-4 offset-md-3">
+         <div class="panel border bg-white">
+  
+          <div class="panel-heading">
+            <h3 class="pt-3 font-weight-bold">Sign Up</h3>
+          </div>
+  
+          <div class="panel-body p-1">
+            <form [formGroup]="_signUpPage">
+  
+              <div class="form-group pt-3">
+                <div class="input-field" [class.error]="_signUpPage.controls['firstName'].dirty && _signUpPage.hasError('required','firstName')">
+                  <span class="fa fa-user p-2"></span>
+                  <input type="text" formControlName="firstName" placeholder="First Name">
+                </div>
+              </div>
+  
+              <div class="form-group pt-3">
+                <div class="input-field" [class.error]="_signUpPage.controls['lastName'].dirty && _signUpPage.hasError('required','lastName')">
+                  <span class="fa fa-user p-2"></span>
+                  <input type="text" formControlName="lastName" placeholder="Last Name">
+                </div>
+              </div>
+  
+              <div class="form-group pt-3">
+                <div class="input-field" [class.error]="_signUpPage.controls['email'].dirty && _signUpPage.hasError('required','email')">
+                  <span class="fa fa-user p-2"></span>
+                  <input type="text" formControlName="email" placeholder="Email">
+                </div>
+              </div>
+  
+              <div class="form-group pt-3">
+                <div class="input-field" [class.error]="_signUpPage.controls['userName'].dirty && _signUpPage.hasError('required','userName')">
+                  <span class="fa fa-user p-2"></span>
+                  <input type="text" formControlName="userName" placeholder="User Name">
+                </div>
+              </div>
+  
+              <div class="form-group pt-3">
+                <div class="input-field" [class.error]="_signUpPage.controls['password'].dirty && _signUpPage.hasError('required','password')">
+                  <span class="fa fa-lock p-2"></span>
+                  <input [type]="type" formControlName="password" placeholder="Password">
+                  <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                </div>
+              </div>
+  
+              <div class="form-group pt-3">
+                <div class="input-field" [class.error]="_signUpPage.controls['confirmPassword'].dirty && _signUpPage.hasError('required','confirmPassword')">
+                  <span class="fa fa-lock p-2"></span>
+                  <input [type]="type" formControlName="confirmPassword" placeholder="Confirm Password">
+                  <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                </div>
+              </div>
+  
+              <button (click)="onSubmit()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Sign Up</button>
+  
+              <div class="text-center pt-4 text-muted">
+                Already have account? <a id="forget" routerLink="/login">Login</a>
+              </div>
+  
+            </form>
+          </div>
+  
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
